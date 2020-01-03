@@ -1,0 +1,72 @@
+@page
+@model WebApp.Pages_Expenses.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Expense[0].ExpenseName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Expense[0].ExpenseCostEur)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Expense[0].ExpenseQuantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Expense[0].ExpenseType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Expense[0].Unit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Expense[0].Car)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Expense[0].CarMileage)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Expense) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExpenseName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExpenseCostEur)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExpenseQuantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExpenseType.ExpenseTypeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Unit.UnitName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Car.CarMake)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CarMileage)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ExpenseId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ExpenseId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ExpenseId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
