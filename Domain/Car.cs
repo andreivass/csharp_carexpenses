@@ -18,13 +18,13 @@ namespace Domain
         
         public int CarYear { get; set; }
 
-        public string FuelId { get; set; } = default!;
-        public Fuel Fuel { get; set; } = default!;
+        public int FuelId { get; set; }
+        public Fuel? Fuel { get; set; }
         
         public int CarCurrentMileage { get; set; }
         public int CarInitialMileage { get; set; }
 
-        public ICollection<Expense> CarExpenses { get; set; } = default!;
+        public ICollection<Expense>? CarExpenses { get; set; }
 
     }
 }

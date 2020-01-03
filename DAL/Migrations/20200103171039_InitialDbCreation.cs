@@ -56,8 +56,7 @@ namespace DAL.Migrations
                     CarModel = table.Column<string>(maxLength: 128, nullable: false),
                     Description = table.Column<string>(maxLength: 1000, nullable: false),
                     CarYear = table.Column<int>(nullable: false),
-                    FuelId = table.Column<string>(nullable: false),
-                    FuelId1 = table.Column<int>(nullable: false),
+                    FuelId = table.Column<int>(nullable: false),
                     CarCurrentMileage = table.Column<int>(nullable: false),
                     CarInitialMileage = table.Column<int>(nullable: false)
                 },
@@ -65,8 +64,8 @@ namespace DAL.Migrations
                 {
                     table.PrimaryKey("PK_Cars", x => x.CarId);
                     table.ForeignKey(
-                        name: "FK_Cars_Fuels_FuelId1",
-                        column: x => x.FuelId1,
+                        name: "FK_Cars_Fuels_FuelId",
+                        column: x => x.FuelId,
                         principalTable: "Fuels",
                         principalColumn: "FuelId",
                         onDelete: ReferentialAction.Cascade);
@@ -110,9 +109,9 @@ namespace DAL.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Cars_FuelId1",
+                name: "IX_Cars_FuelId",
                 table: "Cars",
-                column: "FuelId1");
+                column: "FuelId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Expenses_CarId",

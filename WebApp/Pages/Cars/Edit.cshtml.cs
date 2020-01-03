@@ -30,12 +30,14 @@ namespace WebApp.Pages_Cars
                 return NotFound();
             }
 
-            Car = await _context.Cars.FirstOrDefaultAsync(m => m.CarId == id);
+            Car = await _context.Cars
+                .Include(c => c.Fuel).FirstOrDefaultAsync(m => m.CarId == id);
 
             if (Car == null)
             {
                 return NotFound();
             }
+           ViewData["FuelId"] = new SelectList(_context.Fuels, "FuelId", "FuelName");
             return Page();
         }
 

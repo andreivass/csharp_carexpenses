@@ -9,7 +9,7 @@ namespace Domain
 
         [MaxLength(128)]public string FuelName { get; set; } = default!;
         
-        public ICollection<Car> Cars { get; set; } = default!;
+        public ICollection<Car>? Cars { get; set; }
 
     }
 }

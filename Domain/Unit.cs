@@ -9,6 +9,6 @@ namespace Domain
         
         [MaxLength(128)] public string UnitName { get; set; } = default!;
 
-        public ICollection<Expense> Expenses { get; set; } = default!;
+        public ICollection<Expense>? Expenses { get; set; }
     }
 }

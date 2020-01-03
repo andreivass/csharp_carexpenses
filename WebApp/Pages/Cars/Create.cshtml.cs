@@ -21,6 +21,7 @@ namespace WebApp.Pages_Cars
 
         public IActionResult OnGet()
         {
+        ViewData["FuelId"] = new SelectList(_context.Fuels, "FuelId", "FuelName");
             return Page();
         }
 

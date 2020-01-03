@@ -50,16 +50,12 @@ namespace DAL.Migrations
                         .HasColumnType("TEXT")
                         .HasMaxLength(1000);
 
-                    b.Property<string>("FuelId")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("FuelId1")
+                    b.Property<int>("FuelId")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("CarId");
 
-                    b.HasIndex("FuelId1");
+                    b.HasIndex("FuelId");
 
                     b.ToTable("Cars");
                 });
@@ -156,7 +152,7 @@ namespace DAL.Migrations
                 {
                     b.HasOne("Domain.Fuel", "Fuel")
                         .WithMany("Cars")
-                        .HasForeignKey("FuelId1")
+                        .HasForeignKey("FuelId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

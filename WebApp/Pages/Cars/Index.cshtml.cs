@@ -23,7 +23,8 @@ namespace WebApp.Pages_Cars
 
         public async Task OnGetAsync()
         {
-            Car = await _context.Cars.ToListAsync();
+            Car = await _context.Cars
+                .Include(c => c.Fuel).ToListAsync();
         }
     }
 }
