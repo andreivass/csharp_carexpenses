@@ -17,5 +17,33 @@
       <ProjectReference Include="..\DAL\DAL.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Pages\Cars\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Cars\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Cars\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Cars\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Cars\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Expenses\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Expenses\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Expenses\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Expenses\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Expenses\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\ExpenseTypes\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\ExpenseTypes\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\ExpenseTypes\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\ExpenseTypes\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\ExpenseTypes\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Fuels\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Fuels\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Fuels\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Fuels\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Fuels\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Units\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Units\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Units\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Units\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Units\Index.cshtml" />
+    </ItemGroup>
+
 
 </Project>

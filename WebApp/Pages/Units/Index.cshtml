@@ -16,6 +16,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Unit[0].UnitName)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Unit[0].UnitTime)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -24,6 +27,9 @@
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.UnitName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UnitTime)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.UnitId">Edit</a> |

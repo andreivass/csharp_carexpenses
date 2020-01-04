@@ -16,6 +16,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.ExpenseType[0].ExpenseTypeName)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExpenseType[0].ExpenseTypeTime)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -24,6 +27,9 @@
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.ExpenseTypeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExpenseTypeTime)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.ExpenseTypeId">Edit</a> |

@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DAL.Migrations
 {
@@ -12,7 +13,8 @@ namespace DAL.Migrations
                 {
                     ExpenseTypeId = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    ExpenseTypeName = table.Column<string>(maxLength: 128, nullable: false)
+                    ExpenseTypeName = table.Column<string>(maxLength: 128, nullable: false),
+                    ExpenseTypeTime = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -25,7 +27,8 @@ namespace DAL.Migrations
                 {
                     FuelId = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    FuelName = table.Column<string>(maxLength: 128, nullable: false)
+                    FuelName = table.Column<string>(maxLength: 128, nullable: false),
+                    FuelTime = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -38,7 +41,8 @@ namespace DAL.Migrations
                 {
                     UnitId = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    UnitName = table.Column<string>(maxLength: 128, nullable: false)
+                    UnitName = table.Column<string>(maxLength: 128, nullable: false),
+                    UnitTime = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -58,7 +62,8 @@ namespace DAL.Migrations
                     CarYear = table.Column<int>(nullable: false),
                     FuelId = table.Column<int>(nullable: false),
                     CarCurrentMileage = table.Column<int>(nullable: false),
-                    CarInitialMileage = table.Column<int>(nullable: false)
+                    CarInitialMileage = table.Column<int>(nullable: false),
+                    CarTime = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -83,7 +88,8 @@ namespace DAL.Migrations
                     ExpenseTypeId = table.Column<int>(nullable: false),
                     UnitId = table.Column<int>(nullable: false),
                     CarId = table.Column<int>(nullable: false),
-                    CarMileage = table.Column<int>(nullable: false)
+                    CarMileage = table.Column<int>(nullable: false),
+                    ExpenseTime = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {
