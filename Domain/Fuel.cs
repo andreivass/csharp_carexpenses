@@ -6,6 +6,7 @@ namespace Domain
 {
     public class Fuel
     {
+        [Display(Name = "Fuel type")]
         public int FuelId { get; set; }
         
         [Display(Name = "Fuel")]
