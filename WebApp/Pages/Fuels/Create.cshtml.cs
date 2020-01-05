@@ -25,7 +25,7 @@ namespace WebApp.Pages_Fuels
         }
 
         [BindProperty]
-        public Fuel Fuel { get; set; }
+        public Fuel Fuel { get; set; } = default!;
 
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
@@ -35,7 +35,8 @@ namespace WebApp.Pages_Fuels
             {
                 return Page();
             }
-
+            
+            Fuel.FuelTime = DateTime.Now;
             _context.Fuels.Add(Fuel);
             await _context.SaveChangesAsync();
 

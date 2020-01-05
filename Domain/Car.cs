@@ -6,6 +6,7 @@ namespace Domain
 {
     public class Car
     {
+        [Display(Name = "Car")]
         public int CarId { get; set; }
         
         [Display(Name = "Plate nr")]
@@ -22,9 +23,9 @@ namespace Domain
         
         [Display(Name = "Model Yr")]
         public int CarYear { get; set; }
-
-        public int FuelId { get; set; }
+        
         [Display(Name = "Fuel type")]
+        public int FuelId { get; set; }
         public Fuel? Fuel { get; set; }
         
         [Display(Name = "Current ODO")]

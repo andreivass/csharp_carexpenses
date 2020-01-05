@@ -61,7 +61,12 @@
         </dd>
     </dl>
 </div>
-<div>
+@*<div>
     <a asp-page="./Edit" asp-route-id="@Model.Expense.ExpenseId">Edit</a> |
     <a asp-page="./Index">Back to List</a>
+</div>*@
+<div class="btn-group btn-group-lg btn-group-md btn-group-sm" role="group" aria-label="Basic example">
+    <a asp-page="./Edit" asp-route-id="@Model.Expense.ExpenseId" class="btn btn-secondary">Edit</a>
+    <a asp-page="./Delete" asp-route-id="@Model.Expense.ExpenseId" class="btn btn-secondary">Delete</a>
+    <a asp-page="./Index" class="btn btn-secondary">Back to List</a>
 </div>

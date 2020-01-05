@@ -25,8 +25,7 @@ namespace WebApp.Pages_Cars
             return Page();
         }
 
-        [BindProperty]
-        public Car Car { get; set; }
+        [BindProperty] public Car Car { get; set; } = default!;
 
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
@@ -37,6 +36,9 @@ namespace WebApp.Pages_Cars
                 return Page();
             }
 
+            Car.CarInitialMileage = Car.CarCurrentMileage;
+            Car.CarTime = DateTime.Now;
+            
             _context.Cars.Add(Car);
             await _context.SaveChangesAsync();
 

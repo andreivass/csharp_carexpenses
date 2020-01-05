@@ -6,6 +6,7 @@ namespace Domain
 {
     public class Unit
     {
+        [Display(Name = "Unit")]
         public int UnitId { get; set; }
         
         [Display(Name = "Unit")]

@@ -21,7 +21,7 @@ namespace WebApp.Pages_Expenses
         }
 
         [BindProperty]
-        public Expense Expense { get; set; }
+        public Expense Expense { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {

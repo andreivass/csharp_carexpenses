@@ -24,8 +24,7 @@ namespace WebApp.Pages_ExpenseTypes
             return Page();
         }
 
-        [BindProperty]
-        public ExpenseType ExpenseType { get; set; }
+        [BindProperty] public ExpenseType ExpenseType { get; set; }
 
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
@@ -35,6 +34,8 @@ namespace WebApp.Pages_ExpenseTypes
             {
                 return Page();
             }
+            
+            ExpenseType.ExpenseTypeTime = DateTime.Now;  
 
             _context.ExpenseTypes.Add(ExpenseType);
             await _context.SaveChangesAsync();

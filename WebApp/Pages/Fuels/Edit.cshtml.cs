@@ -21,7 +21,7 @@ namespace WebApp.Pages_Fuels
         }
 
         [BindProperty]
-        public Fuel Fuel { get; set; }
+        public Fuel Fuel { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {

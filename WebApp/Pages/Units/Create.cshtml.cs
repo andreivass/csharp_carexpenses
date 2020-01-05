@@ -24,8 +24,7 @@ namespace WebApp.Pages_Units
             return Page();
         }
 
-        [BindProperty]
-        public Unit Unit { get; set; }
+        [BindProperty] public Unit Unit { get; set; } = default!;
 
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
@@ -35,6 +34,8 @@ namespace WebApp.Pages_Units
             {
                 return Page();
             }
+            
+            Unit.UnitTime = DateTime.Now;
 
             _context.Units.Add(Unit);
             await _context.SaveChangesAsync();

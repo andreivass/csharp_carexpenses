@@ -19,7 +19,7 @@ namespace WebApp.Pages_ExpenseTypes
             _context = context;
         }
 
-        public ExpenseType ExpenseType { get; set; }
+        public ExpenseType ExpenseType { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {

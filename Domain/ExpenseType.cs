@@ -6,6 +6,7 @@ namespace Domain
 {
     public class ExpenseType
     {
+        [Display(Name = "Expense type")]
         public int ExpenseTypeId { get; set; }
         
         [Display(Name = "Type")]

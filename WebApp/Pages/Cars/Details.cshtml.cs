@@ -19,7 +19,7 @@ namespace WebApp.Pages_Cars
             _context = context;
         }
 
-        public Car Car { get; set; }
+        public Car Car { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {

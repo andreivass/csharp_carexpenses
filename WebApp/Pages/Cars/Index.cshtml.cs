@@ -20,14 +20,14 @@ namespace WebApp.Pages_Cars
             _context = context;
         }
 
-        public IList<Car> Cars { get;set; }
+        public IList<Car> Cars { get; set; } = default!;
         
         [BindProperty(SupportsGet = true)]
-        public string SearchString { get; set; }
+        public string? SearchString { get; set; }
         
-        public string CarMakeSort { get; set; }
-        public string CarModelSort { get; set; }
-        public string CarPlateSort { get; set; }
+        public string? CarMakeSort { get; set; }
+        public string? CarModelSort { get; set; }
+        public string? CarPlateSort { get; set; }
 
         public async Task OnGetAsync(string? onReset, string? sortOrder)
         {

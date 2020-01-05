@@ -19,7 +19,7 @@ namespace WebApp.Pages_Fuels
             _context = context;
         }
 
-        public IList<Fuel> Fuel { get;set; }
+        public IList<Fuel> Fuel { get;set; } = default!;
 
         public async Task OnGetAsync()
         {

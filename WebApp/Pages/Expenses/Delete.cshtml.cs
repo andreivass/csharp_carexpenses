@@ -19,8 +19,7 @@ namespace WebApp.Pages_Expenses
             _context = context;
         }
 
-        [BindProperty]
-        public Expense Expense { get; set; }
+        [BindProperty] public Expense Expense { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {

@@ -20,8 +20,7 @@ namespace WebApp.Pages_Units
             _context = context;
         }
 
-        [BindProperty]
-        public Unit Unit { get; set; }
+        [BindProperty] public Unit Unit { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {

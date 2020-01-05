@@ -19,7 +19,7 @@ namespace WebApp.Pages_Expenses
             _context = context;
         }
 
-        public IList<Expense> Expense { get;set; }
+        public IList<Expense> Expense { get;set; } = default!;
 
         public async Task OnGetAsync()
         {
