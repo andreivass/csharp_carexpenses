@@ -20,13 +20,29 @@ namespace WebApp.Pages_Expenses
         }
 
         public IList<Expense> Expense { get;set; } = default!;
+        
+        [BindProperty(SupportsGet = true)]
+        public string? SearchString { get; set; }
 
-        public async Task OnGetAsync()
+        public async Task OnGetAsync(string? onReset)
         {
             Expense = await _context.Expenses
                 .Include(e => e.Car)
                 .Include(e => e.ExpenseType)
-                .Include(e => e.Unit).ToListAsync();
+                .Include(e => e.Unit).OrderByDescending(d => d.ExpenseTime).ToListAsync();
+            
+            if (onReset == "Reset")
+            {
+                SearchString = "";
+            }
+            
+            
+            
+            if (!string.IsNullOrEmpty(SearchString))
+            {
+                var filterCars = Expense.Where(s => s.Car.CarPlate.ToLower().Contains(SearchString.ToLower()));
+                Expense = filterCars.ToList();
+            }
         }
     }
 }

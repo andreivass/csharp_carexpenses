@@ -10,9 +10,32 @@
 <p>
     <a asp-page="Create" class="btn btn-dark">Add expense</a>
 </p>
+
+<form class="form-inline" method="get">
+    <div class="form-group">
+        Search by plate: <input type="text" value="@Model.SearchString" asp-for="SearchString" class="form-control"/>
+        <input type="submit" value="Search" form-control class="btn btn-dark"/>
+        <input type="submit" value="Reset" name="onReset" class="btn btn-secondary"
+               @(string.IsNullOrWhiteSpace(Model.SearchString) ? "disabled=\"disabled\"" : "")/>
+    </div>
+</form>
+
+<div class="padding-on-top-20">
+    @if (!string.IsNullOrWhiteSpace(Model.SearchString))
+    {
+        <p>Search is active. Search term: @Model.SearchString</p>
+    }
+    <p>Expenses in database: @Model.Expense.Count</p>
+</div>
+
+
 <table class="table table-hover">
     <thead class="thead-dark">
         <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Expense[0].Car)
+            </th>
+            
             <th>
                 @Html.DisplayNameFor(model => model.Expense[0].ExpenseName)
             </th>
@@ -28,9 +51,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Expense[0].Unit)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Expense[0].Car)
-            </th>
+            
             <th>
                 @Html.DisplayNameFor(model => model.Expense[0].CarMileage)
             </th>
@@ -43,6 +64,10 @@
     <tbody>
 @foreach (var item in Model.Expense) {
         <tr onclick="location.href = './Expenses/Details?id=' + @item.ExpenseId;">
+            <td>
+                @Html.DisplayFor(modelItem => item.Car.CarPlate)
+            </td>
+            
             <td>
                 @Html.DisplayFor(modelItem => item.ExpenseName)
             </td>
@@ -58,9 +83,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Unit.UnitName)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Car.CarMake)
-            </td>
+            
             <td>
                 @Html.DisplayFor(modelItem => item.CarMileage)
             </td>

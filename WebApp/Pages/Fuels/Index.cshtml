@@ -5,13 +5,13 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h2>Fuels</h2>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create" class="btn btn-dark">Add fuel</a>
 </p>
-<table class="table">
-    <thead>
+<table class="table table-hover">
+    <thead class="thead-dark">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Fuel[0].FuelName)

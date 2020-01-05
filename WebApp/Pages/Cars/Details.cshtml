@@ -59,18 +59,26 @@
         </dd>
         
         <dt class="col-sm-2">
-            Driven km
+            Total driven distance
         </dt>
         <dd class="col-sm-10">
-            Current - initial odo
+            @Html.DisplayFor(model => model.DrivenKm)
         </dd>
         
         <dt class="col-sm-2">
-            Total cost (also add cost per km, maybe some graph?)
+            Total cost
         </dt>
         <dd class="col-sm-10">
-            TODO: query for expenses
+            @Html.DisplayFor(model => model.TotalCost)
         </dd>
+        
+        <dt class="col-sm-2">
+            Total cost per 1 km
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TotalCost1km)
+        </dd>
+        
         
         
         @*<dt class="col-sm-2">
